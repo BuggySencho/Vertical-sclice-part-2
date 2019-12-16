@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    private float width;
-    private float height;
-    private Vector2 possition;
+    private Vector3 touchPos;
+    private Rigidbody2D rb;
+    private Vector3 dir;
+    private float movementSpeed;
 
-    void Awake()
-    {
-        width = (float)Screen.width / 2f;
-        height = (float)Screen.height / 2f;
-
-        possition = new Vector2(0, 0);
-    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -32,15 +26,15 @@ public class CharacterMovement : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
+            touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPos.z = 0;
+            dir = (touchPos - transform.position);
+            rb.velocity = new Vector2(dir.x, dir.y) * movementSpeed;
 
-            if (touch.phase == TouchPhase.Moved)
+            if (touch.phase == TouchPhase.Ended)
             {
-                Vector2 pos = touch.position;
-                pos.x = (pos.x - width) / width;
-                pos.y = (pos.y - height) / height;
-                possition = new Vector2(-pos.x, pos.y);
-                transform.position = possition;
-            }
+                rb.velocity = Vector2.zero;
+            } 
         }
     }
 }
