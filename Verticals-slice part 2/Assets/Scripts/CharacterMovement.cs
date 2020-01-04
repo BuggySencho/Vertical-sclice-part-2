@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 dir;
     private float movementSpeed = 10f;
+    protectet bool moved;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class CharacterMovement : MonoBehaviour
             {
                 // sets the velocity of the object zero
                 rb.velocity = Vector2.zero;
+                moved = true;
             }
         }
     }
