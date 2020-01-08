@@ -6,7 +6,7 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 dir;
     private float movementSpeed = 10f;
-    protectet bool moved;
+    private Vector3 curPos;
 
     // Start is called before the first frame update
     void Start()
@@ -19,17 +19,24 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         // calls the TouchMovement function
-        TouchMovement();
+       // TouchMovement();
     }
 
-    void TouchMovement()
+    // checks if the toutchpos is within the box collider
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        TouchMovement();
+        Debug.Log("touching");
+    }
+
+    private void TouchMovement()
     {
         // checks if the screen is beeing touched
         if (Input.touchCount > 0)
         {
             // sets the touch to a variable
             Touch touch = Input.GetTouch(0);
-            // makes variable the position where te finger touched in worldspace
+            // makes variable the position where the finger touched in worldspace
             touchPos = Camera.main.ScreenToWorldPoint(touch.position);
             // makes the z axis of the touch possition 0
             touchPos.z = 0;
@@ -42,8 +49,9 @@ public class CharacterMovement : MonoBehaviour
             if (touch.phase == TouchPhase.Ended)
             {
                 // sets the velocity of the object zero
+                curPos = rb.position;
                 rb.velocity = Vector2.zero;
-                moved = true;
+                
             }
         }
     }
