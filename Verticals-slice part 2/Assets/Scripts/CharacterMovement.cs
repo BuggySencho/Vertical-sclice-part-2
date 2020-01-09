@@ -15,18 +15,14 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // calls the TouchMovement function
-       // TouchMovement();
-    }
-
     // checks if the toutchpos is within the box collider
     private void OnTriggerStay2D(Collider2D collision)
     {
-        TouchMovement();
-        Debug.Log("touching");
+        if (collision.gameObject.tag == "MoveArea")
+        {
+            Debug.Log("touching");
+            TouchMovement();
+        }      
     }
 
     private void TouchMovement()
@@ -42,16 +38,19 @@ public class CharacterMovement : MonoBehaviour
             touchPos.z = 0;
             // follows the position of the finger and changes its possition
             dir = (touchPos - transform.position);
-            // gives the velocity to the direction of the touch, thus making the object follow your finger
-            rb.velocity = new Vector2(dir.x, dir.y) * movementSpeed;
+
+            if (touchPos.x > -2.6f && touchPos.x < 1.5f && touchPos.y > -2.8f && touchPos.y < 1.8f)
+            {
+                // gives the velocity to the direction of the touch, thus making the object follow your finger
+                rb.velocity = new Vector2(dir.x, dir.y) * movementSpeed;
+            }
 
             // checks if you stopped touching the screen
             if (touch.phase == TouchPhase.Ended)
             {
                 // sets the velocity of the object zero
                 curPos = rb.position;
-                rb.velocity = Vector2.zero;
-                
+                rb.velocity = Vector2.zero;                
             }
         }
     }
