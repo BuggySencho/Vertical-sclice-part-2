@@ -2,28 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CombatState
-{ PlayerTurn, EnemyTurn, Victory, Defeat }
-
 public class CombatSystem : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] characters;
-    private int characterIndex;
-    protected CombatState state;
-    protected bool dragable;
+    private int turnOrder = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        characterIndex = 0;
-        state = CombatState.PlayerTurn;
-        PlayerTurn();
+
     }
 
-    void PlayerTurn()
-    {
-       
-    }
 }

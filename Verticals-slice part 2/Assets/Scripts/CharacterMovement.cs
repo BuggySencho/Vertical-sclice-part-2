@@ -15,15 +15,20 @@ public class CharacterMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // checks if the toutchpos is within the box collider
-    private void OnTriggerStay2D(Collider2D collision)
+    void Update()
     {
-        if (collision.gameObject.tag == "MoveArea")
-        {
-            Debug.Log("touching");
-            TouchMovement();
-        }      
+        TouchMovement();
     }
+
+    // checks if the toutchpos is within the box collider
+    /*  private void OnTriggerStay2D(Collider2D collision)
+      {
+          if (collision.gameObject.tag == "MoveArea")
+          {
+              Debug.Log("touching");
+              TouchMovement();
+          }      
+      } */
 
     private void TouchMovement()
     {
@@ -38,11 +43,18 @@ public class CharacterMovement : MonoBehaviour
             touchPos.z = 0;
             // follows the position of the finger and changes its possition
             dir = (touchPos - transform.position);
+            Debug.Log(touchPos);
 
-            if (touchPos.x > -2.6f && touchPos.x < 1.5f && touchPos.y > -2.8f && touchPos.y < 1.8f)
+            if (touchPos.x > -2.3f && touchPos.x < 1.4f && touchPos.y > -2.1f && touchPos.y < 1.9f)
             {
+               // Mathf.Clamp(transform.position.x, -2.6f, 1.4f);
+               // Mathf.Clamp(transform.position.y, -2.8f, 1.7f);
                 // gives the velocity to the direction of the touch, thus making the object follow your finger
                 rb.velocity = new Vector2(dir.x, dir.y) * movementSpeed;
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
             }
 
             // checks if you stopped touching the screen
