@@ -8,11 +8,25 @@ public class CombatSystem : MonoBehaviour
     private GameObject[] characters;
     private int turnOrder = 0;
 
-
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    void Update()
+    {
+        
+    }
+
+    void CheckTurn()
+    { 
+        
+    }
+
+    void CheckBoss()
+    { 
+        
     }
 
 }
