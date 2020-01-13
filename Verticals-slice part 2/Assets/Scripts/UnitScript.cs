@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
-[System.Serializable]
-public class UnitScript
+public class UnitScript : MonoBehaviour
 {
     [SerializeField]
     private int hp;
