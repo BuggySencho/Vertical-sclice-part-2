@@ -55,7 +55,8 @@ public class CharacterMovement : MonoBehaviour
             {
                 // sets the velocity of the object zero
                 curPos = rb.position;
-                rb.velocity = Vector2.zero;                
+                rb.velocity = Vector2.zero;
+                CombatSystem.instance.NextTurn();
             }
         }
     }
