@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UIScript : MonoBehaviour
 {
+    private bool btnOn = true;
     public void Pause()
     {
         Time.timeScale = 0f;
@@ -12,8 +13,18 @@ public class UIScript : MonoBehaviour
 
     public void TimesTwo()
     {
-        Time.timeScale = 2f;
-        Debug.Log("Gotta go fast");
+        if (btnOn)
+        {
+            Time.timeScale *= 2;
+            Debug.Log("Gotta go fast");
+            btnOn = false;
+        }
+
+        if (!btnOn)
+        {
+            Time.timeScale = 1f;
+            btnOn = true;
+        }
     }
 
     public void Auto()
