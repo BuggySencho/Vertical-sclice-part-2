@@ -4,20 +4,29 @@ public class UnitScript : MonoBehaviour
 {
     [SerializeField]
     private int hp;
+    public int Hp { get { return hp; } set { hp = value; } }
     [SerializeField]
-    private int strength;
+    protected int strength;
     [SerializeField]
-    private int currentChakraAmount;
+    protected int currentChakraAmount;
     [SerializeField]
-    private int maxChakraAmount;
+    protected int maxChakraAmount;
     [SerializeField]
-    private string range;
+    protected string range;
     [SerializeField]
-    private string affiliation;
+    protected string affiliation;
     [SerializeField]
-    private int luck;
+    protected int luck;
     [SerializeField]
-    private int cost;
+    protected int cost;
     [SerializeField]
-    private string element;
+    protected string element;
+
+    private void Start()
+    {
+        int b= 2342;
+        string s =b.ToString();
+        int a = (int)s[0];
+
+    }
 }
