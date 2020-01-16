@@ -8,12 +8,16 @@ public class CombatSystem : MonoBehaviour
     private List<GameObject> characters = new List<GameObject>();
     public List<GameObject> Characters { get { return characters; } }
     private int turnOrder = 0;
+    [SerializeField]
     private int bossTurn = 3;
+    [SerializeField]
+    private GameObject bossAttacks;
 
     public static CombatSystem instance;
 
     private void Awake()
-    {
+    { 
+
         if (instance == null)
         {
             instance = this;
@@ -59,7 +63,7 @@ public class CombatSystem : MonoBehaviour
         }
         else
         {
-            // bossTurn
+            BossAttack();
             bossTurn = Random.Range(2, 4);
 
         }
@@ -67,9 +71,17 @@ public class CombatSystem : MonoBehaviour
 
     void BossAttack()
     {
-        if (bossTurn <= 0)
-        {
+        Instantiate(bossAttacks, transform.position, transform.rotation);
+        Debug.Log("Attacking");
+        WaitTime();
+      //  NextTurn(); in corutine
+    }
 
-        }
+    IEnumerator WaitTime()
+    {
+        new WaitForSeconds(2f);
+        Destroy(bossAttacks);
+        NextTurn();
+        yield return new WaitForSeconds(2f);
     }
 }
