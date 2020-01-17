@@ -33,7 +33,6 @@ public class CharacterMovement : MonoBehaviour
             touchPos.z = 0;
             // follows the position of the finger and changes its possition
             dir = (touchPos - transform.position);
-            Debug.Log(touchPos);
 
             // checks is the touch possition is between valid values
             if (touchPos.x > -2.3f && touchPos.x < 1.4f && touchPos.y > -2.1f && touchPos.y < 1.9f)

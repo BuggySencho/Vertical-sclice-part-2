@@ -2,19 +2,21 @@
 
 public class Types : MonoBehaviour
 {
-    private enum Elements
+    private enum elements
     {
-        heart,
-        body,
-        skill,
-        bravery,
-        wisdom
+        HEART,
+        BODY,
+        SKILL,
+        BRAVERY,
+        WISDOM
     }
+
+    private elements type;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
