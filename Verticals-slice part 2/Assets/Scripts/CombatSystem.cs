@@ -10,13 +10,16 @@ public class CombatSystem : MonoBehaviour
     private int turnOrder = 0;
     [SerializeField]
     private int bossTurn = 3;
+    public int BossTurn { get { return bossTurn; } set { bossTurn = value; } }
     [SerializeField]
-    private GameObject bossAttacks;
+    private Animator anim;
 
     public static CombatSystem instance;
 
     private void Awake()
-    { 
+    {
+        bossTurn = Random.Range(2, 4);
+       // rangeRing.transform.gameObject.SetActive(true);
 
         if (instance == null)
         {
@@ -33,18 +36,19 @@ public class CombatSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bossTurn = Random.Range(2, 4);
-
+        
         for (int i = 0; i < characters.Count; i++)
         {
+            characters[i].transform.GetChild(0).gameObject.SetActive(false);
             characters[i].GetComponent<CharacterMovement>().enabled = false;
         }
-
+        characters[0].transform.GetChild(0).gameObject.SetActive(true);
         characters[0].GetComponent<CharacterMovement>().enabled = true;
     }
 
     public void NextTurn()
     {
+        characters[turnOrder].transform.GetChild(0).gameObject.SetActive(false);
         characters[turnOrder].GetComponent<CharacterMovement>().enabled = false;
 
         if (turnOrder < characters.Count - 1)
@@ -58,30 +62,27 @@ public class CombatSystem : MonoBehaviour
 
         if (bossTurn > 0)
         {
+            characters[turnOrder].transform.GetChild(0).gameObject.SetActive(true);
             characters[turnOrder].GetComponent<CharacterMovement>().enabled = true;
             bossTurn--;
         }
-        else
+        else if(bossTurn <= 0)
         {
             BossAttack();
-            bossTurn = Random.Range(2, 4);
-
         }
     }
 
     void BossAttack()
     {
-        Instantiate(bossAttacks, transform.position, transform.rotation);
-        Debug.Log("Attacking");
-        WaitTime();
-      //  NextTurn(); in corutine
+        anim.SetBool("Attacking", true);
+        StartCoroutine(WaitTime());
     }
 
-    IEnumerator WaitTime()
+    private IEnumerator WaitTime()
     {
-        new WaitForSeconds(2f);
-        Destroy(bossAttacks);
+         yield return new WaitForSeconds(2f);
+        anim.SetBool("Attacking", false);
+        bossTurn = Random.Range(2, 4) + 1;
         NextTurn();
-        yield return new WaitForSeconds(2f);
     }
 }

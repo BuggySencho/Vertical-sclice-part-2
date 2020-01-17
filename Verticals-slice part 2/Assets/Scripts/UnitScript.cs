@@ -7,6 +7,7 @@ public class UnitScript : MonoBehaviour
     public int Hp { get { return hp; } set { hp = value; } }
     [SerializeField]
     protected int strength;
+    public int Strength { get { return strength; } set { strength = value; } }
     [SerializeField]
     protected int currentChakraAmount;
     [SerializeField]

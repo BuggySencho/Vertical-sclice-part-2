@@ -16,10 +16,4 @@ public class PlayerHealth : MonoBehaviour
         health = CombatSystem.instance.Characters[0].GetComponent<UnitScript>().Hp + CombatSystem.instance.Characters[1].GetComponent<UnitScript>().Hp + CombatSystem.instance.Characters[2].GetComponent<UnitScript>().Hp;
         curHealth = health;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

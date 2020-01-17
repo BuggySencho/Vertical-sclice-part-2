@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - MoveArea
+  - Attack
+  - Boss
   layers:
   - Default
   - TransparentFX
