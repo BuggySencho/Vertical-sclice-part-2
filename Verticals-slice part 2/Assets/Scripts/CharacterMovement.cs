@@ -52,6 +52,7 @@ public class CharacterMovement : MonoBehaviour
             // checks if you stopped touching the screen
             if (touch.phase == TouchPhase.Ended)
             {
+                
                 // sets the velocity of the object zero
                 curPos = rb.position;
                 rb.velocity = Vector2.zero;

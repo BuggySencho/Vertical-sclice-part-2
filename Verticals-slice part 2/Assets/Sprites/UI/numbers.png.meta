@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 69a869813eb144b419b6b1c284a8fdf9
+guid: c47135de7e9fd984b93725778b77dd6a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -826027145960231147
-    second: 06_moji_tex_hits_0
+      213: -7542371115539988336
+    second: numbers_0
   - first:
-      213: -2306727352386375173
-    second: 06_moji_tex_hits_1
+      213: -1797931468360238817
+    second: numbers_1
   - first:
-      213: -4231683223933038293
-    second: 06_moji_tex_hits_2
+      213: 8660018047190439917
+    second: numbers_2
   - first:
-      213: 2960125342077790406
-    second: 06_moji_tex_hits_3
+      213: -3498881285385226111
+    second: numbers_3
   - first:
-      213: -6216887005325664780
-    second: 06_moji_tex_hits_4
+      213: 4377404233718576581
+    second: numbers_4
   - first:
-      213: -6792939437609284636
-    second: 06_moji_tex_hits_5
+      213: 4142773217156024776
+    second: numbers_5
   - first:
-      213: 8428083371736166931
-    second: 06_moji_tex_hits_6
+      213: -5267421815309426554
+    second: numbers_6
   - first:
-      213: -3094374372830373578
-    second: 06_moji_tex_hits_7
+      213: 396241215753336735
+    second: numbers_7
   - first:
-      213: -6657662435139766816
-    second: 06_moji_tex_hits_8
+      213: 3845720923341389424
+    second: numbers_8
   - first:
-      213: -95823227468367270
-    second: 06_moji_tex_hits_9
+      213: 5966370575965500985
+    second: numbers_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 06_moji_tex_hits_0
+      name: numbers_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 3
-        width: 40
-        height: 57
+        width: 54
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0008d829d2497e148b4c7097be12700d
-      internalID: -826027145960231147
+      spriteID: 63bcc3bbfdfc25e48ae77ec1553b2265
+      internalID: -7542371115539988336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 06_moji_tex_hits_1
+      name: numbers_1
       rect:
         serializedVersion: 2
-        x: 56
+        x: 64
         y: 3
-        width: 26
-        height: 57
+        width: 62
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d02bdfd76f61834288d911ae1e818fa
-      internalID: -2306727352386375173
+      spriteID: b84ee568b8c105f44841d5ded06a5e50
+      internalID: -1797931468360238817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 06_moji_tex_hits_2
+      name: numbers_2
       rect:
         serializedVersion: 2
-        x: 95
+        x: 134
+        y: 3
+        width: 46
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22cbc478f5f48cf4e802cfe1b0f2c0a5
+      internalID: 8660018047190439917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_3
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 3
+        width: 61
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2e21aff59f511459513c9b24f344ac
+      internalID: -3498881285385226111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_4
+      rect:
+        serializedVersion: 2
+        x: 267
         y: 4
-        width: 40
-        height: 56
+        width: 45
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d69df907202b2ae47ae1ce47a47f5761
-      internalID: -4231683223933038293
+      spriteID: c173cd5f8e9aaa149a2b3891cb9db631
+      internalID: 4377404233718576581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 06_moji_tex_hits_3
+      name: numbers_5
       rect:
         serializedVersion: 2
-        x: 143
+        x: 321
         y: 4
-        width: 37
-        height: 56
+        width: 52
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +255,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7df8cb68f7cf72458a6a311c8808bf7
-      internalID: 2960125342077790406
+      spriteID: 5fa06aec2e1b3fc4b9a61e27917ee6b1
+      internalID: 4142773217156024776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 06_moji_tex_hits_4
+      name: numbers_6
       rect:
         serializedVersion: 2
-        x: 185
+        x: 388
+        y: 0
+        width: 55
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29522ef221ee77e47be3e6a392a007c8
+      internalID: -5267421815309426554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_7
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 4
+        width: 44
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d620cc76ee1ffa34096026d27cdf200c
+      internalID: 396241215753336735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_8
+      rect:
+        serializedVersion: 2
+        x: 507
         y: 4
         width: 41
-        height: 56
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,104 +318,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0d4b4cfb5c584342af615ab6ee17997
-      internalID: -6216887005325664780
+      spriteID: 9d6be298bc8290e42adb615844c64f72
+      internalID: 3845720923341389424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 06_moji_tex_hits_5
+      name: numbers_9
       rect:
         serializedVersion: 2
-        x: 236
-        y: 3
-        width: 38
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdd0491cf68c32442a0d3ac5c3a39983
-      internalID: -6792939437609284636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 06_moji_tex_hits_6
-      rect:
-        serializedVersion: 2
-        x: 280
-        y: 3
-        width: 35
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a17eda878d88ef24f86d0f2475b29043
-      internalID: 8428083371736166931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 06_moji_tex_hits_7
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 3
-        width: 39
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8e2a1be5bd360b40826ccd1fdd90355
-      internalID: -3094374372830373578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 06_moji_tex_hits_8
-      rect:
-        serializedVersion: 2
-        x: 373
-        y: 3
-        width: 36
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51357ae6bf207ca46a993a1728fd8876
-      internalID: -6657662435139766816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 06_moji_tex_hits_9
-      rect:
-        serializedVersion: 2
-        x: 418
+        x: 558
         y: 4
-        width: 38
-        height: 57
+        width: 56
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,8 +339,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ffa70819f30de6459da68d9368ad815
-      internalID: -95823227468367270
+      spriteID: 89aa5902fc117cd4ab5e65e83b6c40c3
+      internalID: 5966370575965500985
       vertices: []
       indices: 
       edges: []
@@ -348,7 +348,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bdb1248e5b73eb1489de6230fe7fa13e
+    spriteID: 3ab5927d670c8d14cb1ef2727adbaad9
     internalID: 0
     vertices: []
     indices: 

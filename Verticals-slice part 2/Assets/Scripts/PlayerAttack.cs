@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class PlayerAttack : MonoBehaviour
     private GameObject scriptManager;
     [SerializeField]
     private int playerDamage;
+    [SerializeField]
+    private Transform spawnPoint;
+    [SerializeField]
+    private GameObject inRangePref;
+    [SerializeField]
+    private Image bossHealthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +27,13 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.CompareTag("Boss"))
         {
+            Instantiate(inRangePref, spawnPoint.position, spawnPoint.rotation);
             scriptManager.GetComponent<BossHealth>().BossCurHealth -= playerDamage;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+      //  Destroy(inRangePref);
     }
 }
