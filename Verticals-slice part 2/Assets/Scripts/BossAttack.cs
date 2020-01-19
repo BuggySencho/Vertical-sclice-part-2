@@ -16,7 +16,7 @@ public class BossAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && scriptManager.GetComponent<CombatSystem>().BossTurn <= 0)
         {
             scriptManager.GetComponent<PlayerHealth>().CurHealth -= bossDamage;
         }

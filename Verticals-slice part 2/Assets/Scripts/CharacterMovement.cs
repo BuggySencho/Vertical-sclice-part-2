@@ -7,12 +7,17 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 dir;
     private float movementSpeed = 10f;
     private Vector3 curPos;
+ /* [SerializeField]
+    private Transform startPos;
+    [SerializeField]
+    private GameObject narutoGhost; */
 
     // Start is called before the first frame update
     void Start()
     {
         // searches the objaect it's attached to for a rigibody2D
         rb = GetComponent<Rigidbody2D>();
+     //   Instantiate(narutoGhost, startPos.position, startPos.rotation);
     }
 
     void Update()
@@ -52,7 +57,7 @@ public class CharacterMovement : MonoBehaviour
             // checks if you stopped touching the screen
             if (touch.phase == TouchPhase.Ended)
             {
-                
+              //  Destroy(narutoGhost);
                 // sets the velocity of the object zero
                 curPos = rb.position;
                 rb.velocity = Vector2.zero;
