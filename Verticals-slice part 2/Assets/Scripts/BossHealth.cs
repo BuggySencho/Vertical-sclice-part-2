@@ -15,6 +15,8 @@ public class BossHealth : MonoBehaviour
     [SerializeField]
     private GameObject bossHealthUI;
     public float BossCurHealth { get { return bossCurHealth; } set { bossCurHealth = value; } }
+    [SerializeField]
+    private GameObject victory;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,8 @@ public class BossHealth : MonoBehaviour
         bossHealthBar.fillAmount = bossCurHealth / health;
         if (bossCurHealth <= 0)
         {
+            Time.timeScale = 0;
+            victory.SetActive(true);
             Debug.Log("VICTORY SCREECH!!!");
         }
     }

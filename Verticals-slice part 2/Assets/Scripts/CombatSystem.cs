@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class CombatSystem : MonoBehaviour
 {
+    // list of all the characters
     [SerializeField]
     private List<GameObject> characters = new List<GameObject>();
     public List<GameObject> Characters { get { return characters; } }
+    // shows the turn order wich is used to determine wich character is next
     private int turnOrder = 0;
+    public int TurnOrder { get { return turnOrder; } }
+    // value to show when the boss can attack
     [SerializeField]
     private int bossTurn = 3;
     public int BossTurn { get { return bossTurn; } set { bossTurn = value; } }
+    // the animator is defined here
     [SerializeField]
     private Animator anim;
 
@@ -18,7 +23,7 @@ public class CombatSystem : MonoBehaviour
 
     private void Awake()
     {
-        bossTurn = Random.Range(2, 4);
+       // bossTurn = Random.Range(2, 4);
        // rangeRing.transform.gameObject.SetActive(true);
 
         if (instance == null)
@@ -36,7 +41,7 @@ public class CombatSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // sets every characters movement false and enables the movement of the first character
         for (int i = 0; i < characters.Count; i++)
         {
             characters[i].transform.GetChild(0).gameObject.SetActive(false);
@@ -48,9 +53,11 @@ public class CombatSystem : MonoBehaviour
 
     public void NextTurn()
     {
+        // disables the movement for the current character
         characters[turnOrder].transform.GetChild(0).gameObject.SetActive(false);
         characters[turnOrder].GetComponent<CharacterMovement>().enabled = false;
 
+        // adds 1 to the turn order
         if (turnOrder < characters.Count - 1)
         {
             turnOrder++;
@@ -60,18 +67,22 @@ public class CombatSystem : MonoBehaviour
             turnOrder = 0;
         }
 
+        // enables the movement for the next character
         if (bossTurn > 0)
         {
             characters[turnOrder].transform.GetChild(0).gameObject.SetActive(true);
             characters[turnOrder].GetComponent<CharacterMovement>().enabled = true;
             bossTurn--;
         }
+
+        // the boss attacks if his turn is 0 or below that
         else if(bossTurn <= 0)
         {
             BossAttack();
         }
     }
 
+    // enables 
     void BossAttack()
     {
         anim.SetBool("Attacking", true);
@@ -82,7 +93,7 @@ public class CombatSystem : MonoBehaviour
     {
          yield return new WaitForSeconds(2f);
         anim.SetBool("Attacking", false);
-        bossTurn = Random.Range(2, 4) + 1;
+        bossTurn = 3; //Random.Range(2, 4) + 1;
         NextTurn();
     }
 }

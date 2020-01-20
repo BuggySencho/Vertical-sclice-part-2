@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         scriptManager = GameObject.FindGameObjectWithTag("GameController");
-        playerDamage = CombatSystem.instance.Characters[0].GetComponent<UnitScript>().Strength;
+        playerDamage = CombatSystem.instance.Characters[CombatSystem.instance.TurnOrder].GetComponent<UnitScript>().Strength;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,8 +37,6 @@ public class PlayerAttack : MonoBehaviour
     public void DamageBoss()
     {
         scriptManager.GetComponent<BossHealth>().BossCurHealth -= playerDamage;
-
-        CombatSystem.instance.NextTurn();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
