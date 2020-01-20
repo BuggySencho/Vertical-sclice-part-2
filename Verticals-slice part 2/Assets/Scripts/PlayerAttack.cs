@@ -16,6 +16,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private Image bossHealthBar;
 
+    public bool BossInRange { get; set; } = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +29,24 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.CompareTag("Boss"))
         {
-            Instantiate(inRangePref, spawnPoint.position, spawnPoint.rotation);
-            scriptManager.GetComponent<BossHealth>().BossCurHealth -= playerDamage;
+            BossInRange = true;
+            collision.transform.GetChild(0).gameObject.SetActive(true);
         }
+    }
+
+    public void DamageBoss()
+    {
+        scriptManager.GetComponent<BossHealth>().BossCurHealth -= playerDamage;
+
+        CombatSystem.instance.NextTurn();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-      //  Destroy(inRangePref);
+        if (collision.CompareTag("Boss"))
+        {
+            BossInRange = false;
+            collision.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 }
