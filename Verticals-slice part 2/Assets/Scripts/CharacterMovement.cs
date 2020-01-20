@@ -65,10 +65,8 @@ public class CharacterMovement : MonoBehaviour
                 {
                     playerAttack.DamageBoss();
                 }
-                else
-                {
-                    CombatSystem.instance.NextTurn();
-                }
+
+                 CombatSystem.instance.NextTurn();
               //  Destroy(narutoGhost);
                 // sets the velocity of the object zero
                 

@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
     private GameObject playerHealthUI;
     [SerializeField]
     private Image playerHealthBar;
+    [SerializeField]
+    private GameObject defeat;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class PlayerHealth : MonoBehaviour
 
         if (curHealth <= 0)
         {
+            defeat.SetActive(true);
+            Time.timeScale = 0;
             Debug.Log("YOU'VE SUFFERED DEFEAT!!!");
         }
     }
