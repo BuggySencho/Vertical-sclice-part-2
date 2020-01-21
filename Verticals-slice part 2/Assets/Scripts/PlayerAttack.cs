@@ -7,8 +7,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField]
     private GameObject scriptManager;
-    [SerializeField]
-    private int playerDamage;
+    public int PlayerDamage { get; set; } = 0;
     [SerializeField]
     private Transform spawnPoint;
     [SerializeField]
@@ -22,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         scriptManager = GameObject.FindGameObjectWithTag("GameController");
-        playerDamage = CombatSystem.instance.Characters[CombatSystem.instance.TurnOrder].GetComponent<UnitScript>().Strength;
+        PlayerDamage = transform.parent.GetComponent<UnitScript>().Strength;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void DamageBoss()
     {
-        scriptManager.GetComponent<BossHealth>().BossCurHealth -= playerDamage;
+        scriptManager.GetComponent<BossHealth>().BossCurHealth -= PlayerDamage;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

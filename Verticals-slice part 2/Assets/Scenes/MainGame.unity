@@ -773,7 +773,7 @@ PrefabInstance:
     - target: {fileID: 4607787779716845563, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf5fb7ba677786e42a80f0b1b121e8a0, type: 3}
@@ -1011,36 +1011,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &301871116 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4607787779716845541, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 915019369}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &301871117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4607787779716845562, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
     type: 3}
   m_PrefabInstance: {fileID: 915019369}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &301871118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301871116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 195d9493468cd0041ac71eb31dbc9660, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptManager: {fileID: 0}
-  playerDamage: 0
-  spawnPoint: {fileID: 1239288371}
-  inRangePref: {fileID: 7604909089330745737, guid: 3bb0b07c5a770db4c90aa1df8331645b,
-    type: 3}
-  bossHealthBar: {fileID: 0}
 --- !u!1 &421509142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,6 +1175,7 @@ GameObject:
   - component: {fileID: 426266062}
   - component: {fileID: 426266061}
   - component: {fileID: 426266063}
+  - component: {fileID: 426266064}
   m_Layer: 0
   m_Name: MoveIndicator
   m_TagString: Untagged
@@ -1287,6 +1264,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &426266064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426266060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec4377601718fc24babab6d891aa00de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secretTechniques:
+  - {fileID: 21300000, guid: 79fa9dcad5666764cb42fc42fa4e763f, type: 3}
+  - {fileID: 21300000, guid: 14ba085d1f6b2ba4382f93baa1682727, type: 3}
+  - {fileID: 21300000, guid: 34c3436b8f268f34c9ed8ffc3b720cbe, type: 3}
 --- !u!1 &457055724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,7 +1784,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1646925241
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: a96e3566dacf2ce4a8dd38229fb7f272, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2897,36 +2890,12 @@ Transform:
   m_Father: {fileID: 662082597}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &907900133 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4607787779716845541, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 227445313}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &907900134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4607787779716845562, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
     type: 3}
   m_PrefabInstance: {fileID: 227445313}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &907900135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907900133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 195d9493468cd0041ac71eb31dbc9660, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptManager: {fileID: 0}
-  playerDamage: 0
-  spawnPoint: {fileID: 1239288371}
-  inRangePref: {fileID: 7604909089330745737, guid: 3bb0b07c5a770db4c90aa1df8331645b,
-    type: 3}
-  bossHealthBar: {fileID: 0}
 --- !u!1 &909346730
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,6 +3076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607787779716845563, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf5fb7ba677786e42a80f0b1b121e8a0, type: 3}
@@ -4073,7 +4047,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1646925241
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d502e1163202b66408bb0c8bf12d3e76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6422,36 +6396,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1708296598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4607787779716845541, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1758285349}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1708296599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4607787779716845562, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
     type: 3}
   m_PrefabInstance: {fileID: 1758285349}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1708296600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708296598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 195d9493468cd0041ac71eb31dbc9660, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptManager: {fileID: 0}
-  playerDamage: 0
-  spawnPoint: {fileID: 1239288371}
-  inRangePref: {fileID: 7604909089330745737, guid: 3bb0b07c5a770db4c90aa1df8331645b,
-    type: 3}
-  bossHealthBar: {fileID: 0}
 --- !u!1 &1721298067
 GameObject:
   m_ObjectHideFlags: 0
@@ -6860,30 +6810,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4607787779716845562, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
+    - target: {fileID: 4607787779716845563, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.8954613
-      objectReference: {fileID: 0}
-    - target: {fileID: 4607787779716845562, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.8954613
-      objectReference: {fileID: 0}
-    - target: {fileID: 4607787779716845562, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.4641483
-      objectReference: {fileID: 0}
-    - target: {fileID: -911646749760075426, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -911646749760075426, guid: cf5fb7ba677786e42a80f0b1b121e8a0,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf5fb7ba677786e42a80f0b1b121e8a0, type: 3}
