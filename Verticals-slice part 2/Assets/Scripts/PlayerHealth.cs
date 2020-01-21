@@ -17,11 +17,17 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private Image playerHealthBar;
     [SerializeField]
+    private GameObject playerDamageUI;
+    [SerializeField]
+    private Image playerDamageBar;
+    public Image PlayerDamageBar { get { return playerDamageBar; } set { playerDamageBar = value; } }
+    [SerializeField]
     private GameObject defeat;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerDamageBar = playerDamageUI.GetComponent<Image>();
         playerHealthBar = playerHealthUI.GetComponent<Image>();
         health = CombatSystem.instance.Characters[0].GetComponent<UnitScript>().Hp + CombatSystem.instance.Characters[1].GetComponent<UnitScript>().Hp + CombatSystem.instance.Characters[2].GetComponent<UnitScript>().Hp;
         curHealth = health;
@@ -30,6 +36,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        if (BossAttack.playerTakingDamage)
+        {
+            StartCoroutine(PlayerLosingHealth());
+        }
+
         playerHealthBar.fillAmount = curHealth / health;
         healthText.GetComponent<Text>().text = curHealth.ToString();
 
@@ -39,5 +50,12 @@ public class PlayerHealth : MonoBehaviour
             Time.timeScale = 0;
             Debug.Log("YOU'VE SUFFERED DEFEAT!!!");
         }
+    }
+
+    private IEnumerator PlayerLosingHealth()
+    {
+        Debug.Log("Taking critical damage!");
+        yield return new WaitForSeconds(1f);
+        playerDamageBar.fillAmount = curHealth / health;
     }
 }
