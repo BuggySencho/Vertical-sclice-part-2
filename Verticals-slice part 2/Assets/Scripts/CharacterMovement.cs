@@ -12,9 +12,11 @@ public class CharacterMovement : MonoBehaviour
        [SerializeField]
        private GameObject narutoGhost; */
     private PlayerAttack playerAttack;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         // searches the objaect it's attached to for a rigibody2D
         rb = GetComponent<Rigidbody2D>();
         playerAttack = transform.GetChild(0).GetComponent<PlayerAttack>();
@@ -39,6 +41,7 @@ public class CharacterMovement : MonoBehaviour
             touchPos.z = 0;
             // follows the position of the finger and changes its possition
             dir = (touchPos - transform.position);
+            anim.SetBool("Running", true);
 
             // checks is the touch possition is between valid values
             if (touchPos.x > -2.3f && touchPos.x < 1.4f && touchPos.y > -2.1f && touchPos.y < 1.9f)
@@ -58,6 +61,7 @@ public class CharacterMovement : MonoBehaviour
             // checks if you stopped touching the screen
             if (touch.phase == TouchPhase.Ended)
             {
+                anim.SetBool("Running", false);
                 curPos = rb.position;
                 rb.velocity = Vector2.zero;
 

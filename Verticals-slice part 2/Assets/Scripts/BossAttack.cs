@@ -8,6 +8,7 @@ public class BossAttack : MonoBehaviour
     private int bossDamage;
     [SerializeField]
     private GameObject scriptManager;
+    public static bool playerTakingDamage = false;
 
     private void Start()
     {
@@ -18,7 +19,21 @@ public class BossAttack : MonoBehaviour
     {
         if (collision.CompareTag("Player") && scriptManager.GetComponent<CombatSystem>().BossTurn <= 0)
         {
+            playerTakingDamage = true;
             scriptManager.GetComponent<PlayerHealth>().CurHealth -= bossDamage;
+
         }
+
+      /*  if (scriptManager.GetComponent<CombatSystem>().BossTurn <= 0)
+        {
+            playerTakingDamage = true;
+        }
+         */
     }
+
+ /*   private void OnTriggerExit(Collider other)
+    {
+        
+    } */
+
 }

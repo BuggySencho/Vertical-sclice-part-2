@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     private Image bossHealthBar;
 
     public bool BossInRange { get; set; } = false;
+    public static bool TakingDamage = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.CompareTag("Boss"))
         {
+            TakingDamage = true;
             BossInRange = true;
             collision.transform.GetChild(0).gameObject.SetActive(true);
         }
@@ -42,6 +44,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.CompareTag("Boss"))
         {
+            TakingDamage = false;
             BossInRange = false;
             collision.transform.GetChild(0).gameObject.SetActive(false);
         }
