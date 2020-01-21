@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4607787779716845563}
   - component: {fileID: 4607787779716845540}
   - component: {fileID: -911646749760075426}
+  - component: {fileID: 2404253327620916692}
   m_Layer: 0
   m_Name: RangeCircle
   m_TagString: Untagged
@@ -26,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4607787779716845541}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.59219, y: 0.5181668, z: -2896.05}
-  m_LocalScale: {x: 5.002247, y: 5.002247, z: 5.002247}
+  m_LocalScale: {x: 3.8954613, y: 3.8954613, z: 1.4641483}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -110,9 +111,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.09750057, y: 0}
   serializedVersion: 2
   m_Radius: 1.1634061
+--- !u!114 &2404253327620916692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607787779716845541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195d9493468cd0041ac71eb31dbc9660, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptManager: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  inRangePref: {fileID: 0}
+  bossHealthBar: {fileID: 0}

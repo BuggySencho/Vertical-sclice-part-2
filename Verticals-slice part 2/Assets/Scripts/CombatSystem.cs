@@ -13,7 +13,7 @@ public class CombatSystem : MonoBehaviour
     public int TurnOrder { get { return turnOrder; } }
     // value to show when the boss can attack
     [SerializeField]
-    private int bossTurn = 3;
+    private int bossTurn = 2;
     public int BossTurn { get { return bossTurn; } set { bossTurn = value; } }
     // the animator is defined here
     [SerializeField]
@@ -93,7 +93,7 @@ public class CombatSystem : MonoBehaviour
     {
          yield return new WaitForSeconds(2f);
         anim.SetBool("Attacking", false);
-        bossTurn = 3; //Random.Range(2, 4) + 1;
+        bossTurn = 4; //Random.Range(2, 4) + 1;
         NextTurn();
     }
 }

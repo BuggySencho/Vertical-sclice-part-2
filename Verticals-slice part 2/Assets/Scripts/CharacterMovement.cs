@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
     {
         // searches the objaect it's attached to for a rigibody2D
         rb = GetComponent<Rigidbody2D>();
-        playerAttack = GetComponent<PlayerAttack>();
+        playerAttack = transform.GetChild(0).GetComponent<PlayerAttack>();
      //   Instantiate(narutoGhost, startPos.position, startPos.rotation);
     }
 
@@ -63,6 +63,7 @@ public class CharacterMovement : MonoBehaviour
 
                 if (playerAttack.BossInRange)
                 {
+                    Debug.Log("Yess");
                     playerAttack.DamageBoss();
                 }
 
