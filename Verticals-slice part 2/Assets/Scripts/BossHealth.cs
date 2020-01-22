@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class BossHealth : MonoBehaviour
 {
     [SerializeField]
-    private float health = 20000f;
+    public static float health = 20000f;
     [SerializeField]
-    private float bossCurHealth;
+    public static float bossCurHealth;
     [SerializeField]
     private Image bossHealthBar;
     public Image BossHealthBar { get { return bossHealthBar; } set { bossHealthBar = value; } }
@@ -17,7 +17,7 @@ public class BossHealth : MonoBehaviour
     [SerializeField]
     private GameObject bossDamageUI;
     [SerializeField]
-    private Image bossDamageBar;
+    public static Image bossDamageBar;
     public Image BossDamageBar { get { return bossDamageBar; } set { bossDamageBar = value; } }
     public float BossCurHealth { get { return bossCurHealth; } set { bossCurHealth = value; } }
     [SerializeField]
@@ -33,12 +33,13 @@ public class BossHealth : MonoBehaviour
 
     private void Update()
     {
+
         bossHealthBar.fillAmount = bossCurHealth / health;
 
-        if (PlayerAttack.TakingDamage)
+      /*  if (PlayerAttack.TakingDamage)
         {
             StartCoroutine(BossLosingHealth());
-        }
+        } */ 
 
         if (bossCurHealth <= 0)
         {
@@ -48,9 +49,9 @@ public class BossHealth : MonoBehaviour
         }
     }
 
-    private IEnumerator BossLosingHealth()
+    public static IEnumerator BossLosingHealth()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         bossDamageBar.fillAmount = bossCurHealth / health;
     }
 }
