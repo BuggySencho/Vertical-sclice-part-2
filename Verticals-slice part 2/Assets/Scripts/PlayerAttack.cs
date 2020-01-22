@@ -29,7 +29,6 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.CompareTag("Boss"))
         {
-            TakingDamage = true;
             BossInRange = true;
             collision.transform.GetChild(0).gameObject.SetActive(true);
         }
@@ -37,16 +36,21 @@ public class PlayerAttack : MonoBehaviour
 
     public void DamageBoss()
     {
+      //  TakingDamage = true;
+     //   StartCoroutine(BossHealth.BossLosingHealth());
         scriptManager.GetComponent<BossHealth>().BossCurHealth -= PlayerDamage;
+        new WaitForSeconds(3f);
+        BossHealth.bossDamageBar.fillAmount = BossHealth.bossCurHealth / BossHealth.health;
+      //  TakingDamage = false;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Boss"))
         {
-            TakingDamage = false;
             BossInRange = false;
             collision.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
+
 }
