@@ -67,8 +67,10 @@ public class CharacterMovement : MonoBehaviour
 
                 if (playerAttack.BossInRange)
                 {
+                    anim.SetTrigger("Attacking");
                     Debug.Log("Yess");
                     playerAttack.DamageBoss();
+                    anim.SetBool("Running", false);
                 }
 
                  CombatSystem.instance.NextTurn();
