@@ -2956,8 +2956,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 1184497758}
-  - {fileID: 562312422}
   - {fileID: 1326553107}
+  - {fileID: 562312422}
   bossTurn: 3
   anim: {fileID: 1503988879}
   moveIndicator: {fileID: 426266060}
@@ -2993,12 +2993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fec0ef1628a4043b8c5117932b2b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20000
-  bossCurHealth: 0
   bossHealthBar: {fileID: 0}
   bossHealthUI: {fileID: 1534010378}
   bossDamageUI: {fileID: 1745594426}
-  bossDamageBar: {fileID: 0}
   victory: {fileID: 1307457490}
 --- !u!1001 &915019369
 PrefabInstance:
@@ -3258,6 +3255,7 @@ GameObject:
   - component: {fileID: 965211643}
   - component: {fileID: 965211645}
   - component: {fileID: 965211644}
+  - component: {fileID: 965211646}
   m_Layer: 5
   m_Name: HealthText
   m_TagString: Untagged
@@ -3326,6 +3324,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965211642}
   m_CullTransparentMesh: 0
+--- !u!114 &965211646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965211642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &970822324
 GameObject:
   m_ObjectHideFlags: 0
@@ -4730,7 +4743,7 @@ MonoBehaviour:
   strength: 1592
   currentChakraAmount: 3
   maxChakraAmount: 8
-  range: Short
+  range: Medium
   affiliation: Hidden leaf, Uchiha clan
   luck: 10
   cost: 80
